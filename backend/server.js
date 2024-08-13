@@ -61,9 +61,10 @@ pool.connect((err, client, release) => {
 
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://book-rental-system-seven.vercel.app', // your front-end URL
-    credentials: true // allow sending cookies with requests
+  origin: 'https://book-rental-system-seven.vercel.app', // Front-end domain
+  credentials: true // Allow credentials (cookies) to be sent
 }));
+
 app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/admin',adminRoutes);

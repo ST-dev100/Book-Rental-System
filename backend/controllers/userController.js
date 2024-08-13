@@ -41,11 +41,9 @@ const login = async (req, res) => {
     res.cookie('jwt', token, {
       maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
       httpOnly: true, // Prevent XSS attacks
-      sameSite: 'strict', // Prevent CSRF attacks
-      secure: false, // Set secure flag in production
-    });
+    });  
 
-    // Respond with user role and email
+    // Respond with user role and email 
     res.json({ userRole: user.role, email: user.email });
 
   } catch (error) {

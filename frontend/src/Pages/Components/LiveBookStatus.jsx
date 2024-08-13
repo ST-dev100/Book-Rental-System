@@ -142,7 +142,8 @@ const LiveBookStatus = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/api/getAllbooks',{credentials:"include"});
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/api/getAllbooks',{
+          credentials:"include"});
         const result = await response.json();
         setData(result);
       } catch (error) {
