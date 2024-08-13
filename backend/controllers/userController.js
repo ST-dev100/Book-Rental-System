@@ -42,6 +42,7 @@ const login = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
       httpOnly: true, // Prevent XSS attacks
       sameSite: 'None', 
+      secure: true,
     });  
 
     // Respond with user role and email 
