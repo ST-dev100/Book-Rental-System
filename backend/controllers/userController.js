@@ -42,7 +42,7 @@ const login = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
       httpOnly: true, // Prevent XSS attacks
       sameSite: 'strict', // Prevent CSRF attacks
-      secure: process.env.NODE_ENV !== 'development', // Set secure flag in production
+      secure: false, // Set secure flag in production
     });
 
     // Respond with user role and email
