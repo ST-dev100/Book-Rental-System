@@ -14,7 +14,7 @@ const OwnerListTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/admin/ownerlist', {
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/ownerlist', {
           credentials: 'include'
         });
         if (!response.ok) {
@@ -36,7 +36,7 @@ const OwnerListTable = () => {
   const handleStatusChange = async (id, currentStatus) => {
     const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
     try {
-      const response = await fetch(`http://localhost:5000/admin/update-status/${id}`, {
+      const response = await fetch(`https://book-rental-system-qctq.vercel.app/admin/update-status/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -56,7 +56,7 @@ const OwnerListTable = () => {
   const handleApprovalChange = async (id, currentApproval) => {
     const newApproval = currentApproval === 'approved' ? 'notapproved' : 'approved';
     try {
-      const response = await fetch(`http://localhost:5000/admin/update-approval/${id}`, {
+      const response = await fetch(`https://book-rental-system-qctq.vercel.app/admin/update-approval/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -75,7 +75,7 @@ const OwnerListTable = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/delete-user/${id}`, {
+      const response = await fetch(`https://book-rental-system-qctq.vercel.app/admin/delete-user/${id}`, {
         method: 'DELETE',
         credentials: 'include'
       });

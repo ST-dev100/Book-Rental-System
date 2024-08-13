@@ -9,7 +9,7 @@ const AdminShowBooks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/admin/api/books',{credentials:"include"});
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/api/books',{credentials:"include"});
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -25,7 +25,7 @@ const AdminShowBooks = () => {
     const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
     try {
       // Send a request to the server to update the status
-      const response = await fetch(`http://localhost:5000/admin/api/books/${id}`, {
+      const response = await fetch(`https://book-rental-system-qctq.vercel.app/admin/api/books/${id}`, {
         method: 'PATCH',
         credentials:"include",
         headers: {

@@ -26,7 +26,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/signup', data);
+      const response = await axios.post('https://book-rental-system-qctq.vercel.app/api/users/signup', data);
       console.log(response.data);
       toast.success('Registration was successful!'); // Success message
     } catch (error) {

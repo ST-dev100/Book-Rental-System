@@ -13,7 +13,7 @@ const OwnerListTable = () => {
     // Fetch data from the server
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/admin/ownerlist', {
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/ownerlist', {
           credentials: 'include' // Ensure cookies are sent with the request
         });
         if (!response.ok) {   

@@ -25,7 +25,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', data, { withCredentials: true });
+      const response = await axios.post('https://book-rental-system-qctq.vercel.app/api/users/login', data, { withCredentials: true });
       console.log(response.data);
       
       toast.success('Login successful!');

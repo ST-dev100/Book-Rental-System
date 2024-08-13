@@ -142,7 +142,7 @@ const LiveBookStatus = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/admin/api/getAllbooks');
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/admin/api/getAllbooks');
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -170,7 +170,7 @@ const LiveBookStatus = () => {
 
   const handleDeleteClick = async (bookId) => {
     try {
-      await fetch(`http://localhost:5000/admin/api/deleteBook/${bookId}`, {
+      await fetch(`https://book-rental-system-qctq.vercel.app/admin/api/deleteBook/${bookId}`, {
         method: 'DELETE',
       });
       setData(data.filter((book) => book.id !== bookId));
@@ -186,7 +186,7 @@ const LiveBookStatus = () => {
 
   const onSubmit = async (formData) => {
     try {
-      const response = await fetch(`http://localhost:5000/admin/api/updateBook/${selectedBook.id}`, {
+      const response = await fetch(`https://book-rental-system-qctq.vercel.app/admin/api/updateBook/${selectedBook.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

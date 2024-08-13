@@ -8,7 +8,7 @@ const AvailableBooks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/owner/api/availabooks`, {
+        const response = await fetch(`https://book-rental-system-qctq.vercel.app/owner/api/availabooks`, {
           credentials: "include",
         });
         const result = await response.json();

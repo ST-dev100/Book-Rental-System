@@ -39,7 +39,7 @@ const UploadBookComponent = () => {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const response = await fetch("http://localhost:5000/owner/book-catagory/list", {credentials: "include"});
+        const response = await fetch("https://book-rental-system-qctq.vercel.app/owner/book-catagory/list", {credentials: "include"});
         const data = await response.json();
         console.log("empty", data);
         setOptions(data); // Assuming the server returns an array of book names or categories
@@ -61,7 +61,7 @@ const UploadBookComponent = () => {
     formData.append("category", data.category);
 
     try {
-      const response = await fetch("http://localhost:5000/owner/books/upload", {
+      const response = await fetch("https://book-rental-system-qctq.vercel.app/owner/books/upload", {
         method: "POST",
         body: formData,
         credentials: "include",

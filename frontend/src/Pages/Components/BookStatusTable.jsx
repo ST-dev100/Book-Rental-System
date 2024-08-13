@@ -77,7 +77,7 @@ const BookStatusTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/owner/api/books', { credentials: "include" });
+        const response = await fetch('https://book-rental-system-qctq.vercel.app/owner/api/books', { credentials: "include" });
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -95,7 +95,7 @@ const BookStatusTable = () => {
 
   const handleDelete = async (bookNo) => {
     try {
-      await fetch(`http://localhost:5000/owner/api/books/${bookNo}`, {
+      await fetch(`https://book-rental-system-qctq.vercel.app/owner/api/books/${bookNo}`, {
         method: 'DELETE',
         credentials: 'include'
       });
@@ -112,7 +112,7 @@ const BookStatusTable = () => {
 
   const handleSave = async () => {
     try {
-      await fetch(`http://localhost:5000/owner/api/books/${editData.bookNo}`, {
+      await fetch(`https://book-rental-system-qctq.vercel.app/owner/api/books/${editData.bookNo}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
