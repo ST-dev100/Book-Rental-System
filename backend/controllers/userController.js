@@ -41,6 +41,7 @@ const login = async (req, res) => {
     res.cookie('jwt', token, {
       maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
       httpOnly: true, // Prevent XSS attacks
+      sameSite: 'None', 
     });  
 
     // Respond with user role and email 
