@@ -10,16 +10,16 @@ const path = require("path");
 
 const { Pool } = require('pg');
 
-require('dotenv').config();
+require('dotenv').config(); 
 
-// const pool = require('./db');
+// const pool = require('./db'); 
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { 
     rejectUnauthorized: false, // Required for secure connections to Railway
   },
-});
+}); 
 
 
 const storage = multer.diskStorage({

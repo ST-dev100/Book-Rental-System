@@ -24,6 +24,14 @@ const createUser = async (email, password, location, phoneNumber) => {
   );
   return result.rows[0];
 };
+// const createUser = async (email, password, location, phoneNumber) => {
+//   const hashedPassword = await bcrypt.hash(password, 10);
+//   const result = await pool.query(
+//     'INSERT INTO users (email, password, location, phone_number, approved, status, role) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+//     [email, hashedPassword, location, phoneNumber, 'approved', 'active', 'admin']
+//   );
+//   return result.rows[0];
+// };
 
 const findUserByEmail = async (email) => {
   const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
