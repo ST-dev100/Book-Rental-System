@@ -61,7 +61,7 @@ pool.connect((err, client, release) => {
 
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:5173', // your front-end URL
+    origin: 'https://book-rental-system-seven.vercel.app', // your front-end URL
     credentials: true // allow sending cookies with requests
 }));
 app.use(bodyParser.json());
